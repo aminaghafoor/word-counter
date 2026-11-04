@@ -1,0 +1,226 @@
+/* =========================================
+   WORD COUNTER - PHASE 6 TEXT MANAGEMENT
+========================================= */
+
+/* EDITOR ACTION BUTTONS */
+
+.editor-actions {
+  flex-wrap: wrap;
+}
+
+.editor-actions button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    opacity var(--transition);
+}
+
+.editor-actions button:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.editor-actions .primary-action:hover:not(:disabled) {
+  background: var(--color-primary);
+}
+
+.editor-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.editor-actions button:focus-visible,
+.goal-form button:focus-visible,
+.goal-form input:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.download-action {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+/* ACTION FEEDBACK */
+
+.editor-action-status {
+  min-height: 24px;
+  margin: 0 24px 10px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+/* TEMPORARY CLIPBOARD FALLBACK ELEMENT */
+
+.clipboard-fallback {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* WORD GOAL FORM */
+
+.goal-form {
+  margin-top: 22px;
+}
+
+.goal-input-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
+}
+
+.goal-input-group label {
+  grid-column: 1 / -1;
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.goal-input-group input {
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 10px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-editor);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 15px;
+}
+
+.goal-input-group input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.goal-set-button {
+  min-height: 45px;
+  padding: 10px 20px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-medium);
+  background: var(--color-primary);
+  color: #ffffff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.goal-set-button:hover {
+  background: var(--color-primary);
+}
+
+/* GOAL PROGRESS */
+
+.goal-progress-container {
+  margin-top: 25px;
+}
+
+.goal-progress-container[hidden] {
+  display: none;
+}
+
+.goal-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.goal-progress-header strong {
+  color: var(--color-primary);
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+
+.goal-progress-track {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--color-surface-secondary);
+}
+
+.goal-progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-primary);
+  transition: width 250ms ease;
+}
+
+.goal-status {
+  margin-top: 12px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.goal-status.goal-completed {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.goal-remove-button {
+  margin-top: 12px;
+  padding: 5px 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.goal-remove-button:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+
+@media (max-width: 650px) {
+  .editor-action-status {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .goal-input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-input-group label {
+    grid-column: auto;
+  }
+
+  .goal-set-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-action-status {
+    margin-left: 14px;
+    margin-right: 14px;
+    font-size: 13px;
+  }
+
+  .editor-actions {
+    justify-content: flex-end;
+  }
+
+  .goal-progress-header {
+    font-size: 14px;
+  }
+}

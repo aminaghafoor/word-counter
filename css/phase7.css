@@ -1,0 +1,31 @@
+/* =========================================
+   WORD COUNTER - PHASE 7 FILE IMPORT
+========================================= */
+
+/* Import buttons */
+
+.editor-actions .import-action {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+.editor-actions .import-action:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.editor-actions .import-action:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.editor-actions .import-action:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hidden file inputs */
+
+.editor-actions input[type="file"][hidden] {
+  display: none;
+}

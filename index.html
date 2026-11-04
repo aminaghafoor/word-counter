@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Word Counter - Free Online Word & Character Counter</title>
+
+    <meta
+      name="description"
+      content="Count words, characters, sentences and paragraphs instantly with this free online word counter. Import TXT, DOCX, PDF and PPTX files and analyse your text in your browser."
+    />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#F8FAFC" />
+
+    <!-- Open Graph metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Word Counter" />
+    <meta
+      property="og:title"
+      content="Free Online Word Counter - Word and Character Counter"
+    />
+    <meta
+      property="og:description"
+      content="Count words, characters, sentences and paragraphs. Import supported documents and analyse your text with a free online word counter."
+    />
+
+    <!-- Twitter/X metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Free Online Word Counter - Word and Character Counter"
+    />
+    <meta
+      name="twitter:description"
+      content="Count words, characters and more with a free online word counter and document text analyser."
+    />
+
+    <!-- Apply saved theme before loading stylesheets -->
+    <script src="js/theme.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/phase6.css" />
+    <link rel="stylesheet" href="css/phase7.css" />
+
+    <!-- JavaScript libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/grapheme-splitter@1.0.4/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.13.0/mammoth.browser.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jszip@3.10.2/dist/jszip.min.js"
+      defer
+    ></script>
+
+    <!-- Application JavaScript -->
+    <script src="js/counter.js" defer></script>
+    <script src="js/file-reader.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/pptx-reader.js" defer></script>
+    <script type="module" src="js/pdf-reader.js"></script>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="index.html" class="logo" aria-label="Word Counter Home">
+          <span class="logo-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8" />
+            </svg>
+          </span>
+
+          <span class="logo-text">Word<span>Counter</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="privacy.html" class="nav-link">Privacy</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch to dark theme"
+            aria-pressed="false"
+            title="Switch to dark theme"
+          >
+            <!-- Moon icon: shown in light theme -->
+            <svg
+              class="theme-icon theme-icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+            </svg>
+
+            <!-- Sun icon: shown in dark theme -->
+            <svg
+              class="theme-icon theme-icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.42 1.42"></path>
+              <path d="m17.65 17.65 1.42 1.42"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.35 17.65-1.42 1.42"></path>
+              <path d="m19.07 4.93-1.42 1.42"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main id="home">
+      <!-- HERO SECTION -->
+
+      <section class="hero-section">
+        <div class="container hero-container">
+          <span class="hero-label">
+            <span class="status-dot"></span>
+            Free Online Writing Tool
+          </span>
+
+          <h1>Free Online <span>Word Counter</span></h1>
+
+          <p class="hero-description">
+            Count words, characters and analyse your text instantly. A simple
+            and reliable tool for students, writers and creators.
+          </p>
+        </div>
+      </section>
+
+      <!-- WORD COUNTER SECTION -->
+
+      <section class="counter-section">
+        <div class="container">
+          <div class="counter-wrapper">
+            <!-- EDITOR CARD -->
+
+            <div class="editor-card">
+              <div class="editor-header">
+                <div>
+                  <h2>Your Text</h2>
+                  <p>Enter or paste your text below</p>
+                </div>
+
+                <span class="editor-status">
+                  <span class="status-dot"></span>
+                  Ready to analyse
+                </span>
+              </div>
+
+              <div class="editor-body">
+                <label class="sr-only" for="text-editor"
+                  >Enter or paste your text</label
+                >
+
+                <textarea
+                  id="text-editor"
+                  class="text-editor"
+                  name="text"
+                  placeholder="Start typing or paste your text here..."
+                  aria-describedby="editor-instructions"
+                  spellcheck="true"
+                ></textarea>
+
+                <span id="editor-instructions" class="sr-only">
+                  Enter or paste text into this area. Your text is processed in
+                  your browser and is not automatically saved.
+                </span>
+              </div>
+
+              <div class="editor-footer">
+                <div class="editor-meta">
+                  <span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <path d="M4 6h16M4 12h16M4 18h10" />
+                    </svg>
+                    <span>0 characters</span>
+                  </span>
+                </div>
+
+                <div class="editor-actions">
+                  <span class="action-placeholder">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14" />
+                    </svg>
+                    Clear
+                  </span>
+
+                  <span class="action-placeholder primary-action">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <rect x="8" y="8" width="12" height="12" rx="2" />
+                      <path
+                        d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"
+                      />
+                    </svg>
+                    Copy
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- STATISTICS SECTION -->
+
+            <div class="statistics-section">
+              <div class="statistics-heading">
+                <div>
+                  <h2>Text Statistics</h2>
+                  <p>A quick overview of your text</p>
+                </div>
+
+                <span class="live-indicator">
+                  <span class="status-dot"></span>
+                  Live analysis
+                </span>
+              </div>
+
+              <div class="statistics-grid">
+                <div class="stat-card">
+                  <div class="stat-card-top">
+                    <span class="stat-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+                      </svg>
+                    </span>
+                    <span class="stat-label">Words</span>
+                  </div>
+                  <strong class="stat-value">0</strong>
+                  <span class="stat-description">Total words</span>
+                </div>
+
+                <div class="stat-card">
+                  <div class="stat-card-top">
+                    <span class="stat-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 4h14v16H5z" />
+                        <path d="M8 8h8M8 12h8M8 16h5" />
+                      </svg>
+                    </span>
+                    <span class="stat-label">Characters</span>
+                  </div>
+                  <strong class="stat-value">0</strong>
+                  <span class="stat-description">Including spaces</span>
+                </div>
+
+                <div class="stat-card">
+                  <div class="stat-card-top">
+                    <span class="stat-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 5h16M4 12h16M4 19h16" />
+                        <circle cx="8" cy="5" r="1" />
+                      </svg>
+                    </span>
+                    <span class="stat-label">Characters</span>
+                  </div>
+                  <strong class="stat-value">0</strong>
+                  <span class="stat-description">Without spaces</span>
+                </div>
+
+                <div class="stat-card">
+                  <div class="stat-card-top">
+                    <span class="stat-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 19V5m0 14h14" />
+                        <path d="m9 15 3-6 3 6" />
+                      </svg>
+                    </span>
+                    <span class="stat-label">Sentences</span>
+                  </div>
+                  <strong class="stat-value">0</strong>
+                  <span class="stat-description">Total sentences</span>
+                </div>
+
+                <div class="stat-card">
+                  <div class="stat-card-top">
+                    <span class="stat-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 5h16M4 10h16M4 15h10" />
+                        <path d="M4 20h7" />
+                      </svg>
+                    </span>
+                    <span class="stat-label">Paragraphs</span>
+                  </div>
+                  <strong class="stat-value">0</strong>
+                  <span class="stat-description">Total paragraphs</span>
+                </div>
+
+                <div class="stat-card">
+                  <div class="stat-card-top">
+                    <span class="stat-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 5h16M4 10h16M4 15h16M4 20h16" />
+                      </svg>
+                    </span>
+                    <span class="stat-label">Lines</span>
+                  </div>
+                  <strong class="stat-value">0</strong>
+                  <span class="stat-description">Total lines</span>
+                </div>
+              </div>
+
+              <!-- ADDITIONAL STATISTICS -->
+
+              <div class="additional-stats">
+                <div class="additional-stat">
+                  <span>Average word length</span>
+                  <strong>0 characters</strong>
+                </div>
+
+                <div class="additional-stat">
+                  <span>Reading time</span>
+                  <strong>0 min</strong>
+                </div>
+
+                <div class="additional-stat">
+                  <span>Speaking time</span>
+                  <strong>0 min</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WORD GOAL SECTION -->
+
+          <section class="goal-section">
+            <div class="goal-header">
+              <div>
+                <h2>Word Count Goal</h2>
+                <p>Set a target and track your writing progress.</p>
+              </div>
+
+              <span class="goal-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <circle cx="12" cy="12" r="5" />
+                  <circle cx="12" cy="12" r="1" />
+                </svg>
+              </span>
+            </div>
+
+            <div class="goal-placeholder">
+              <span>Word goal tracking will be available soon.</span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- INFORMATION SECTION -->
+
+      <section class="information-section">
+        <div class="container information-container">
+          <div class="section-heading">
+            <span class="section-label">WRITE WITH CONFIDENCE</span>
+
+            <h2>More Than Just a Word Counter</h2>
+
+            <p>
+              Understand your writing with useful text statistics and simple
+              tools designed to make writing easier.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M4 5h16M4 10h16M4 15h10" />
+                  <path d="M4 20h7" />
+                </svg>
+              </span>
+
+              <h3>Accurate Text Statistics</h3>
+
+              <p>
+                Explore word counts, character counts and other useful writing
+                measurements.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </span>
+
+              <h3>Reading Time Estimates</h3>
+
+              <p>
+                Get an estimate of how long it may take to read or speak your
+                text.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <span class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5" />
+                  <path d="M5 17v3h14v-3" />
+                </svg>
+              </span>
+
+              <h3>Simple Text Management</h3>
+
+              <p>
+                Work with your text using convenient tools for copying and
+                downloading.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <path d="M14 2v6h6" />
+                  <path d="M8 13h8M8 17h8" />
+                </svg>
+              </span>
+
+              <span class="logo-text">Word<span>Counter</span></span>
+            </a>
+
+            <p>
+              A simple and convenient online tool for understanding your text.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year">2026</span>
+            Word Counter. All rights reserved.
+          </p>
+
+          <span>Made for better writing.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
