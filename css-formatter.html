@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Free CSS Formatter & Minifier Online - ToolNest</title>
+
+    <meta
+      name="description"
+      content="Format, beautify, minify and validate CSS online for free. Improve CSS readability with customizable indentation using ToolNest."
+    />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <link
+      rel="canonical"
+      href="http://tool-nest.great-site.net/css-formatter.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Free CSS Formatter & Minifier - ToolNest"
+    />
+    <meta
+      property="og:description"
+      content="Beautify, format, minify and validate CSS online for free."
+    />
+    <meta
+      property="og:url"
+      content="http://tool-nest.great-site.net/css-formatter.html"
+    />
+    <meta property="og:site_name" content="ToolNest" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Free CSS Formatter & Minifier - ToolNest"
+    />
+    <meta
+      name="twitter:description"
+      content="Format, beautify and minify CSS online for free."
+    />
+
+    <!-- Theme -->
+    <script src="js/theme.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/css-formatter.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ToolNest CSS Formatter",
+        "url": "http://tool-nest.great-site.net/css-formatter.html",
+        "description": "A free online CSS formatter, beautifier and minifier.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="index.html" class="logo" aria-label="ToolNest Home">
+          <span class="logo-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8" />
+            </svg>
+          </span>
+
+          <span class="logo-text">Tool<span>Nest</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#home" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="privacy.html" class="nav-link">Privacy</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch theme"
+            aria-pressed="false"
+            title="Switch theme"
+          >
+            <svg
+              class="theme-icon theme-icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" />
+            </svg>
+
+            <svg
+              class="theme-icon theme-icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2" />
+              <path d="m4.93 4.93 1.42 1.42" />
+              <path d="m17.65 17.65 1.42 1.42" />
+              <path d="M2 12h2M20 12h2" />
+              <path d="m6.35 17.65-1.42 1.42" />
+              <path d="m19.07 4.93-1.42 1.42" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="css-page">
+      <div class="container">
+        <!-- Introduction -->
+        <section class="css-intro">
+          <nav class="css-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="index.html#formatting-tools">Formatting Tools</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">CSS Formatter</span>
+          </nav>
+
+          <h1>CSS Formatter & Minifier</h1>
+
+          <p>
+            Format, beautify, minify and check your CSS code online. Improve
+            code readability with customizable indentation using our free CSS
+            formatter.
+          </p>
+        </section>
+
+        <!-- CSS Formatter Tool -->
+
+        <section class="css-tool" aria-label="CSS formatting tool">
+          <!-- Status -->
+          <div
+            class="css-status"
+            id="cssStatus"
+            role="status"
+            aria-live="polite"
+          >
+            <span class="status-indicator"></span>
+            <span id="statusMessage">Ready to format CSS.</span>
+          </div>
+
+          <!-- Toolbar -->
+          <div class="css-toolbar">
+            <div class="indent-control">
+              <label for="indentSize">Indentation:</label>
+
+              <select id="indentSize">
+                <option value="2">2 Spaces</option>
+                <option value="4">4 Spaces</option>
+                <option value="tab">Tab</option>
+              </select>
+            </div>
+
+            <div class="css-actions">
+              <button
+                type="button"
+                class="css-btn css-btn-primary"
+                id="formatBtn"
+              >
+                <i class="fas fa-indent"></i>
+                Format
+              </button>
+
+              <button type="button" class="css-btn" id="validateBtn">
+                <i class="fas fa-check-circle"></i>
+                Validate
+              </button>
+
+              <button type="button" class="css-btn" id="minifyBtn">
+                <i class="fas fa-compress-alt"></i>
+                Minify
+              </button>
+            </div>
+          </div>
+
+          <!-- Editors -->
+          <div class="css-editors">
+            <!-- Input Editor -->
+            <div class="css-editor-panel">
+              <div class="editor-header">
+                <h2>Input CSS</h2>
+
+                <button type="button" class="editor-action" id="clearBtn">
+                  <i class="fas fa-trash-alt"></i>
+                  Clear
+                </button>
+              </div>
+
+              <textarea
+                id="cssInput"
+                class="css-textarea"
+                placeholder="Paste or write your CSS code here..."
+                spellcheck="false"
+                aria-label="CSS input"
+              ></textarea>
+            </div>
+
+            <!-- Output Editor -->
+            <div class="css-editor-panel">
+              <div class="editor-header">
+                <h2>Formatted CSS</h2>
+
+                <div class="output-actions">
+                  <button type="button" class="editor-action" id="copyBtn">
+                    <i class="fas fa-copy"></i>
+                    Copy
+                  </button>
+
+                  <button type="button" class="editor-action" id="downloadBtn">
+                    <i class="fas fa-download"></i>
+                    Download
+                  </button>
+                </div>
+              </div>
+
+              <textarea
+                id="cssOutput"
+                class="css-textarea css-output"
+                placeholder="Your formatted CSS will appear here..."
+                spellcheck="false"
+                aria-label="Formatted CSS output"
+                readonly
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Error Messages -->
+          <div
+            class="css-error"
+            id="cssError"
+            role="alert"
+            aria-live="assertive"
+            hidden
+          >
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorMessage"></span>
+          </div>
+        </section>
+
+        <!-- Information Section -->
+        <section class="css-information">
+          <h2>About CSS Formatter</h2>
+
+          <p>
+            CSS Formatter is a free online tool that helps you organize and
+            improve the readability of CSS code. Whether you are learning web
+            development or working on a website, you can format and manage your
+            CSS directly in your browser without installing additional software.
+          </p>
+
+          <h3>Features of CSS Formatter</h3>
+
+          <ul>
+            <li>
+              <strong>Format CSS:</strong>
+              Organize CSS rules, selectors and declarations with proper
+              indentation and spacing.
+            </li>
+
+            <li>
+              <strong>Validate CSS:</strong>
+              Check CSS code for common syntax issues.
+            </li>
+
+            <li>
+              <strong>Minify CSS:</strong>
+              Remove unnecessary whitespace and comments to make CSS more
+              compact.
+            </li>
+
+            <li>
+              <strong>Custom Indentation:</strong>
+              Choose between 2 spaces, 4 spaces or tabs.
+            </li>
+
+            <li>
+              <strong>Copy and Download:</strong>
+              Copy formatted CSS or download it as a file.
+            </li>
+
+            <li>
+              <strong>Free and Browser-Based:</strong>
+              Process your CSS directly in your browser without creating an
+              account.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <path d="M14 2v6h6" />
+                  <path d="M8 13h8M8 17h8" />
+                </svg>
+              </span>
+
+              <span class="logo-text">Tool<span>Nest</span></span>
+            </a>
+
+            <p>Your collection of simple and useful online tools.</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="index.html#home">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="json-formatter.html">JSON Formatter</a>
+            <a href="xml-formatter.html">XML Formatter</a>
+            <a href="html-formatter.html">HTML Formatter</a>
+            <a href="css-formatter.html">CSS Formatter</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year">2026</span>
+            ToolNest. All rights reserved.
+          </p>
+
+          <span>Made for better writing.</span>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="js/css-formatter.js"></script>
+  </body>
+</html>
