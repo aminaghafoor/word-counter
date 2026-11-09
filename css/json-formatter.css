@@ -1,0 +1,366 @@
+/* ========================================
+   JSON FORMATTER
+======================================== */
+
+.json-page {
+  padding: 40px 0 60px;
+  min-height: 70vh;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+/* INTRODUCTION */
+
+.json-intro {
+  margin-bottom: 28px;
+}
+
+.json-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.json-breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.json-intro h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.json-intro p {
+  max-width: 680px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* TOOL CONTAINER */
+
+.json-tool {
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
+}
+
+/* STATUS */
+
+.json-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+/* TOOLBAR */
+
+.json-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.indent-control {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.indent-control label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.indent-control select {
+  min-width: 130px;
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.indent-control select:focus {
+  border-color: var(--color-primary);
+}
+
+/* BUTTONS */
+
+.json-actions,
+.output-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.json-btn,
+.editor-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.json-btn:hover,
+.editor-action:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface-secondary);
+}
+
+.json-btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.json-btn-primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+/* BUTTON FEEDBACK STATES */
+.json-btn.is-success,
+.editor-action.is-success {
+  background: var(--color-success-light);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.json-btn.is-error,
+.editor-action.is-error {
+  background: rgba(220, 38, 38, 0.08);
+  border-color: #dc2626;
+  color: #dc2626;
+}
+/* EDITOR PANELS */
+
+.json-editors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.json-editor-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+.editor-header {
+  min-height: 65px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--color-surface-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.editor-header h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.editor-header span {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.editor-action {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+/* TEXT AREAS */
+
+.json-textarea {
+  display: block;
+  width: 100%;
+  min-height: 370px;
+  padding: 16px;
+  resize: vertical;
+  border: none;
+  outline: none;
+  background: var(--color-editor);
+  color: var(--color-text);
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.json-textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.json-output {
+  background: var(--color-surface-secondary);
+}
+
+/* ERROR AREA */
+
+.json-error {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #dc2626;
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+}
+
+.json-error h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+  color: #dc2626;
+}
+
+.json-error p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* INFORMATION */
+
+.json-information {
+  max-width: 850px;
+  margin-top: 45px;
+}
+
+.json-information h2 {
+  margin: 28px 0 10px;
+  font-size: 20px;
+  font-weight: 650;
+  color: var(--color-text);
+}
+
+.json-information p,
+.json-information li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.json-information ul {
+  padding-left: 22px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .json-editors {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .json-page {
+    padding: 30px 0 45px;
+  }
+
+  .json-intro h1 {
+    font-size: 25px;
+  }
+
+  .json-tool {
+    padding: 16px;
+  }
+
+  .json-toolbar {
+    align-items: stretch;
+  }
+
+  .json-actions {
+    width: 100%;
+  }
+
+  .json-btn {
+    flex: 1;
+  }
+
+  .json-textarea {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .json-intro h1 {
+    font-size: 23px;
+  }
+
+  .editor-header {
+    align-items: flex-start;
+  }
+
+  .output-actions {
+    width: 100%;
+  }
+
+  .output-actions .editor-action {
+    flex: 1;
+  }
+
+  .json-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .json-btn-primary {
+    grid-column: span 2;
+  }
+
+  .json-textarea {
+    min-height: 260px;
+    padding: 13px;
+    font-size: 12px;
+  }
+}

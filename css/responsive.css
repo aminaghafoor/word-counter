@@ -527,3 +527,49 @@
     align-items: flex-start;
   }
 }
+/* =========================================
+   FORMATTING TOOLS - RESPONSIVE LAYOUT
+========================================= */
+
+@media (max-width: 900px) {
+  .formatting-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .formatting-section {
+    padding: 55px 0 65px;
+  }
+
+  .formatting-container {
+    gap: 28px;
+  }
+
+  .formatting-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .formatting-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formatting-card {
+    padding: 20px;
+  }
+
+  .formatting-card h3 {
+    font-size: 18px;
+  }
+
+  .formatting-card p {
+    font-size: 14px;
+  }
+
+  .tool-status {
+    font-size: 11px;
+  }
+}
