@@ -126,6 +126,7 @@ minifyBtn.addEventListener("click", () => {
 
   if (!input) {
     jsonError.hidden = true;
+    jsonOutput.value = "";
     jsonStatus.hidden = false;
     statusMessage.textContent = "Please enter some JSON data to minify.";
 
@@ -146,6 +147,7 @@ minifyBtn.addEventListener("click", () => {
     showButtonFeedback(minifyBtn, "success");
   } catch (error) {
     jsonStatus.hidden = true;
+    jsonOutput.value = "";
     jsonError.hidden = false;
     errorMessage.textContent = error.message;
 
