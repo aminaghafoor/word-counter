@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Free XML Formatter & Validator Online - ToolNest</title>
+
+    <meta
+      name="description"
+      content="Format, validate and minify XML online for free. Choose indentation, check XML syntax, and download formatted XML files with ToolNest."
+    />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#F8FAFC" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="http://tool-nest.great-site.net/xml-formatter.html"
+    />
+
+    <!-- Open Graph metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ToolNest" />
+    <meta
+      property="og:title"
+      content="Free XML Formatter & Validator Online - ToolNest"
+    />
+    <meta
+      property="og:description"
+      content="Format, validate and minify XML online with customizable indentation and downloadable output."
+    />
+    <meta
+      property="og:url"
+      content="http://tool-nest.great-site.net/xml-formatter.html"
+    />
+
+    <!-- Twitter/X metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Free XML Formatter & Validator Online - ToolNest"
+    />
+    <meta
+      name="twitter:description"
+      content="Format, validate and minify XML online with ToolNest."
+    />
+
+    <!-- Apply saved theme before stylesheets -->
+    <script src="js/theme.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/xml-formatter.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ToolNest XML Formatter & Validator",
+        "url": "http://tool-nest.great-site.net/xml-formatter.html",
+        "description": "A free online XML formatter and validator. Format, validate, minify, copy and download XML data.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="index.html" class="logo" aria-label="ToolNest Home">
+          <span class="logo-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8" />
+            </svg>
+          </span>
+
+          <span class="logo-text">Tool<span>Nest</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#home" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="privacy.html" class="nav-link">Privacy</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Switch theme"
+            aria-pressed="false"
+            title="Switch theme"
+          >
+            <svg
+              class="theme-icon theme-icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" />
+            </svg>
+
+            <svg
+              class="theme-icon theme-icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2" />
+              <path d="m4.93 4.93 1.42 1.42" />
+              <path d="m17.65 17.65 1.42 1.42" />
+              <path d="M2 12h2M20 12h2" />
+              <path d="m6.35 17.65-1.42 1.42" />
+              <path d="m19.07 4.93-1.42 1.42" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="xml-page">
+      <div class="container">
+        <!-- PAGE INTRODUCTION -->
+        <section class="xml-intro">
+          <nav class="xml-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <span>Formatting Tools</span>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">XML Formatter</span>
+          </nav>
+
+          <h1>XML Formatter &amp; Validator</h1>
+
+          <p>
+            Format, validate and minify XML data online. Organize XML documents
+            into a readable structure and identify syntax errors.
+          </p>
+        </section>
+
+        <!-- XML TOOL -->
+        <section class="xml-tool">
+          <!-- TOOL STATUS -->
+          <div
+            class="xml-status"
+            id="xmlStatus"
+            role="status"
+            aria-live="polite"
+          >
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span id="statusMessage">Ready to process XML</span>
+          </div>
+
+          <!-- TOOL CONTROLS -->
+          <div class="xml-toolbar">
+            <div class="indent-control">
+              <label for="indentSize">Indentation</label>
+
+              <select id="indentSize">
+                <option value="2">2 Spaces</option>
+                <option value="4">4 Spaces</option>
+                <option value="tab">Tab</option>
+              </select>
+            </div>
+
+            <div class="xml-actions">
+              <button
+                type="button"
+                class="xml-btn xml-btn-primary"
+                id="formatBtn"
+              >
+                <i class="fas fa-align-left" aria-hidden="true"></i>
+                Format
+              </button>
+
+              <button type="button" class="xml-btn" id="validateBtn">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                Validate
+              </button>
+
+              <button type="button" class="xml-btn" id="minifyBtn">
+                <i class="fas fa-compress-alt" aria-hidden="true"></i>
+                Minify
+              </button>
+            </div>
+          </div>
+
+          <!-- EDITOR PANELS -->
+          <div class="xml-editors">
+            <!-- INPUT -->
+            <div class="xml-editor-panel">
+              <div class="editor-header">
+                <div>
+                  <h2>Input XML</h2>
+                  <span>Paste or write your XML data</span>
+                </div>
+
+                <button type="button" class="editor-action" id="clearBtn">
+                  <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                  Clear
+                </button>
+              </div>
+
+              <textarea
+                id="xmlInput"
+                class="xml-textarea"
+                placeholder='Paste your XML here...
+
+Example:
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;student&gt;
+  &lt;name&gt;Amina&lt;/name&gt;
+  &lt;course&gt;Information Technology&lt;/course&gt;
+&lt;/student&gt;'
+                spellcheck="false"
+                aria-label="XML input"
+              ></textarea>
+            </div>
+
+            <!-- OUTPUT -->
+            <div class="xml-editor-panel">
+              <div class="editor-header">
+                <div>
+                  <h2>Formatted Output</h2>
+                  <span>Your processed XML will appear here</span>
+                </div>
+
+                <div class="output-actions">
+                  <button type="button" class="editor-action" id="copyBtn">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                    Copy
+                  </button>
+
+                  <button type="button" class="editor-action" id="downloadBtn">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    Download
+                  </button>
+                </div>
+              </div>
+
+              <textarea
+                id="xmlOutput"
+                class="xml-textarea xml-output"
+                placeholder="Formatted XML will appear here..."
+                spellcheck="false"
+                readonly
+                aria-label="Formatted XML output"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- ERROR DETAILS -->
+          <div
+            class="xml-error"
+            id="xmlError"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            hidden
+          >
+            <h3>XML Error</h3>
+            <p id="errorMessage"></p>
+          </div>
+        </section>
+
+        <!-- INFORMATION SECTION -->
+        <section class="xml-information">
+          <h2>What is an XML Formatter?</h2>
+
+          <p>
+            An XML Formatter is a tool that organizes XML documents into a
+            readable structure. It helps developers understand nested elements,
+            attributes and document content.
+          </p>
+
+          <h2>What can you do with this tool?</h2>
+
+          <ul>
+            <li>Format XML with consistent indentation.</li>
+            <li>Validate XML syntax and identify parsing errors.</li>
+            <li>Minify XML by removing unnecessary whitespace.</li>
+            <li>Copy or download processed XML documents.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <path d="M14 2v6h6" />
+                  <path d="M8 13h8M8 17h8" />
+                </svg>
+              </span>
+
+              <span class="logo-text">Tool<span>Nest</span></span>
+            </a>
+
+            <p>Your collection of simple and useful online tools.</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="index.html#home">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="json-formatter.html">JSON Formatter</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year">2026</span>
+            ToolNest. All rights reserved.
+          </p>
+
+          <span>Made for better writing.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/xml-formatter.js"></script>
+  </body>
+</html>
